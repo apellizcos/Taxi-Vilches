@@ -428,6 +428,89 @@ footer strong {
 .enlaces-legales a:hover {
     color: #f5c518;
 }
+
+/* AVISO DE COOKIES */
+
+.cookie-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.55);
+    z-index: 9998;
+    display: none;
+}
+
+.cookie-banner {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 30px);
+    max-width: 650px;
+    background: #fff;
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,.3);
+    z-index: 9999;
+    display: none;
+}
+
+.cookie-banner h3 {
+    color: #111;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.cookie-banner p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.cookie-banner a {
+    color: #a17c00;
+    font-weight: bold;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.cookie-buttons button {
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cookie-accept {
+    background: #f5c518;
+    color: #111;
+}
+
+.cookie-reject {
+    background: #222;
+    color: white;
+}
+
+.cookie-settings {
+    background: #eee;
+    color: #222;
+}
+
+@media(max-width: 500px) {
+    .cookie-banner {
+        padding: 20px;
+        bottom: 10px;
+    }
+
+    .cookie-buttons button {
+        width: 100%;
+    }
+}
 </style>
 </head>
 
@@ -781,5 +864,81 @@ document.getElementById("year").textContent =
     new Date().getFullYear();
 </script>
 
+<!-- AVISO DE COOKIES -->
+
+<div class="cookie-overlay" id="cookieOverlay"></div>
+
+<div class="cookie-banner" id="cookieBanner">
+
+    <h3>🍪 Esta página utiliza cookies</h3>
+
+    <p>
+        Las cookies son pequeños fragmentos de texto que se envían
+        a su navegador web a través de las páginas que visita.
+        Un archivo de la cookie se almacena en su navegador web
+        y nos permite reconocerle y recordar sus preferencias.
+        Al pulsar en "Aceptar" acepta el uso de nuestras cookies.
+        <a href="politica-cookies.html">Leer más</a>
+    </p>
+
+    <div class="cookie-buttons">
+
+        <button class="cookie-accept" onclick="acceptCookies()">
+            Aceptar
+        </button>
+
+        <button class="cookie-reject" onclick="rejectCookies()">
+            Rechazar
+        </button>
+
+        <button class="cookie-settings" onclick="openCookiePolicy()">
+            Más información
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+const cookieBanner = document.getElementById("cookieBanner");
+const cookieOverlay = document.getElementById("cookieOverlay");
+
+function showCookieBanner() {
+
+    if (!localStorage.getItem("cookieConsent")) {
+        cookieBanner.style.display = "block";
+        cookieOverlay.style.display = "block";
+    }
+
+}
+
+function acceptCookies() {
+
+    localStorage.setItem("cookieConsent", "accepted");
+
+    cookieBanner.style.display = "none";
+    cookieOverlay.style.display = "none";
+
+}
+
+function rejectCookies() {
+
+    localStorage.setItem("cookieConsent", "rejected");
+
+    cookieBanner.style.display = "none";
+    cookieOverlay.style.display = "none";
+
+}
+
+function openCookiePolicy() {
+
+    window.location.href = "politica-cookies.html";
+
+}
+
+window.addEventListener("load", showCookieBanner);
+
+</script>
 </body>
 </html>
