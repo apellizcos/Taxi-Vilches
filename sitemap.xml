@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- PÁGINA PRINCIPAL -->
+    <url>
+        <loc>https://taxivilches.es/</loc>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- AVISO LEGAL -->
+    <url>
+        <loc>https://taxivilches.es/aviso-legal.html</loc>
+        <priority>0.3</priority>
+    </url>
+
+    <!-- POLÍTICA DE COOKIES -->
+    <url>
+        <loc>https://taxivilches.es/politica-cookies.html</loc>
+        <priority>0.3</priority>
+    </url>
+
+    <!-- POLÍTICA DE PRIVACIDAD -->
+    <url>
+        <loc>https://taxivilches.es/politica-privacidad.html</loc>
+        <priority>0.3</priority>
+    </url>
+
+</urlset>
