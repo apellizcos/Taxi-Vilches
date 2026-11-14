@@ -1,0 +1,11 @@
+# =================================
+# TAXI VILCHES - ROBOTS.TXT
+# https://taxivilches.es/
+# =================================
+
+User-agent: *
+
+Allow: /
+
+# Sitemap XML
+Sitemap: https://taxivilches.es/sitemap.xml
