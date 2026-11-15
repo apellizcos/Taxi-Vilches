@@ -598,6 +598,81 @@ footer strong {
         width: 100%;
     }
 }
+
+  /* COMPARTIR TAXI VILCHES */
+
+.compartir {
+    background: #111111;
+    color: white;
+    text-align: center;
+    padding: 75px 20px;
+}
+
+.compartir-contenido {
+    max-width: 800px;
+    margin: auto;
+}
+
+.compartir-etiqueta {
+    color: #f5c518;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.compartir h2 {
+    color: #f5c518;
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.compartir p {
+    color: #dddddd;
+    margin-bottom: 25px;
+}
+
+.compartir-botones {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.boton-compartir {
+    display: inline-block;
+    background: #f5c518;
+    color: #111111;
+    border: 2px solid #f5c518;
+    border-radius: 7px;
+    padding: 13px 22px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.boton-compartir:hover {
+    background: transparent;
+    color: #f5c518;
+}
+
+.mensaje-compartir {
+    color: #f5c518 !important;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+@media(max-width: 600px) {
+    .compartir h2 {
+        font-size: 27px;
+    }
+
+    .boton-compartir {
+        width: 100%;
+        max-width: 280px;
+    }
+}
 </style>
 </head>
 
@@ -613,6 +688,7 @@ footer strong {
         <a href="#servicios">Servicios</a>
         <a href="#vehiculo">Mi vehículo</a>
         <a href="#contacto">Contacto</a>
+        <a href="#compartir">Compartir</a>
     </nav>
 
 </header>
@@ -789,6 +865,61 @@ footer strong {
 
 </section>
 
+  <!-- COMPARTIR TAXI VILCHES -->
+
+<section class="compartir" id="compartir">
+
+    <div class="compartir-contenido">
+
+        <div class="compartir-etiqueta">TAXI VILCHES</div>
+
+        <h2>¿Nos ayudas a compartir?</h2>
+
+        <p>
+            Recomienda Taxi Vilches a tus familiares y amigos.
+            Comparte nuestra página y ayúdanos a llegar a más personas.
+        </p>
+
+        <div class="compartir-botones">
+
+            <a class="boton-compartir"
+               href="https://wa.me/?text=Te%20recomiendo%20Taxi%20Vilches%3A%20https%3A%2F%2Ftaxivilches.es"
+               target="_blank"
+               rel="noopener noreferrer">
+                💬 WhatsApp
+            </a>
+
+            <a class="boton-compartir"
+               href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftaxivilches.es%2F"
+               target="_blank"
+               rel="noopener noreferrer">
+                Facebook
+            </a>
+
+            <a class="boton-compartir"
+               href="https://twitter.com/intent/tweet?text=Te%20recomiendo%20Taxi%20Vilches&url=https%3A%2F%2Ftaxivilches.es%2F"
+               target="_blank"
+               rel="noopener noreferrer">
+                𝕏 Compartir
+            </a>
+
+            <button class="boton-compartir"
+                    type="button"
+                    id="copiarEnlace">
+                🔗 Copiar enlace
+            </button>
+
+        </div>
+
+        <p id="mensajeCompartir"
+           class="mensaje-compartir"
+           role="status"
+           aria-live="polite"></p>
+
+    </div>
+
+</section>
+
 <!-- VEHICULO -->
 
 <section class="vehiculo" id="vehiculo">
@@ -949,6 +1080,21 @@ footer strong {
 <script>
 document.getElementById("year").textContent =
     new Date().getFullYear();
+  // COPIAR ENLACE DE TAXI VILCHES
+
+document.getElementById("copiarEnlace").addEventListener("click", async function() {
+
+    const enlace = "https://taxivilches.es/";
+    const mensaje = document.getElementById("mensajeCompartir");
+
+    try {
+        await navigator.clipboard.writeText(enlace);
+        mensaje.textContent = "¡Enlace copiado! Ya puedes compartirlo.";
+    } catch (error) {
+        mensaje.textContent = "No se pudo copiar automáticamente. Puedes copiar https://taxivilches.es/";
+    }
+
+});
 </script>
 
 <!-- AVISO DE COOKIES -->
