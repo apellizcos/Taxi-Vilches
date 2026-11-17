@@ -931,7 +931,7 @@
                     una experiencia agradable durante el viaje.
                 </p>
 
-                <div class "ventajas">
+                <div class="ventajas">
                     <span>✓ Motor híbrido</span>
                     <span>✓ Etiqueta ECO</span>
                     <span>✓ Confort</span>
@@ -1048,23 +1048,19 @@
         </div>
     </div>
 
-    <!-- Google Tag Manager: SOLO se carga si el usuario acepta las cookies -->
     <script>
-        // Define la capa de datos. Se rellena con la consolución cuando el usuario acepte.
-        window.dataLayer = window.dataLayer || [];
+        // ============================================================
+        //  GESTIÓN DE COOKIES Y TAG MANAGER
+        // ============================================================
 
-        // Función gtag(). No se invoca hasta que se cargue el script real.
+        // Capa de datos de Google (se rellena cuando el usuario acepte).
+        window.dataLayer = window.dataLayer || [];
         function gtag(){ dataLayer.push(arguments); }
 
-        // Carga Google Tag Manager (y con él Google Analytics)
-        // Únicamente cuando el usuario haya aceptado las cookies.
+        // Carga Google Tag Manager (con él Google Analytics) y envía el
+        // consentimiento. SE EJECUTA SOLO si el usuario acepta las cookies.
         function cargarGTM() {
-            var gtmScript = document.createElement("script");
-            gtmScript.async = true;
-            gtmScript.src = "https://www.googletagmanager.com/gtm.js?id=GTM-5LVNCM2N";
-            document.head.appendChild(gtmScript);
-
-            // Envía el evento de consentimiento a Google Analytics
+            // Consentimiento: deniega el almacenamiento de datos hasta el "sí".
             gtag("consent", "default", {
                 ad_storage: "denied",
                 analytics_storage: "denied",
@@ -1072,48 +1068,46 @@
                 functionality_storage: "denied",
                 security_storage: "granted"
             });
-            gtag("set", "url_creator", function () {});
+
+            var script = document.createElement("script");
+            script.async = true;
+            script.src = "https://www.googletagmanager.com/gtm.js?id=GTM-5LVNCM2N";
+            document.head.appendChild(script);
 
             gtag("js", new Date());
             gtag("config", "GTM-5LVNCM2N");
         }
 
-        // Carga el aviso de cookies y decide si se activan los seguidores
-        function gestionarCookies() {
-            var consent = null;
+        // Lee la elección guardada en localStorage.
+        function getCookieConsent() {
             try {
-                consent = localStorage.getItem("cookieConsent");
+                return localStorage.getItem("cookieConsent");
             } catch (e) {
-                consent = null;
+                return null;
             }
-
-            if (consent === "accepted") {
-                // Usuario aceptó: se cargan las cookies de seguimiento
-                cargarGTM();
-            }
-            // Si rechazó o no ha decidido, NO se cargan las cookies.
         }
 
-        // Muestra el banner si el usuario aún no ha decidido
-        function showCookieBanner() {
-            var consent = null;
-            try {
-                consent = localStorage.getItem("cookieConsent");
-            } catch (e) {
-                consent = null;
+        // Si el usuario ya aceptó en una visita previa, cargamos el Tag Manager.
+        function comprobarConsentimientoPrevio() {
+            if (getCookieConsent() === "accepted") {
+                cargarGTM();
             }
+        }
 
-            if (!consent) {
+        // Muestra el banner solo si el usuario aún no ha decidido.
+        function showCookieBanner() {
+            if (!getCookieConsent()) {
                 document.getElementById("cookieBanner").style.display = "block";
                 document.getElementById("cookieOverlay").style.display = "block";
             }
         }
-    </script>
 
-    <script>
+        // ============================================================
+        //  RESTO DE FUNCIONALIDADES DE LA PÁGINA
+        // ============================================================
+
         // Año del pie de página
-        document.getElementById("year").textContent =
-            new Date().getFullYear();
+        document.getElementById("year").textContent = new Date().getFullYear();
 
         // Copiar enlace de Taxi Vilches
         document.getElementById("copiarEnlace").addEventListener("click", async function () {
@@ -1147,21 +1141,19 @@
             }
         });
 
-        // Aviso de cookies: guarda la elección en el navegador.
-        const cookieBanner = document.getElementById("cookieBanner");
-        const cookieOverlay = document.getElementById("cookieOverlay");
-
+        // Guardar la elección del usuario en el navegador.
         function saveCookieChoice(choice) {
             try {
-                localStorage.setItem("cookieConsent", choice);
+                localStorage.setItem("cookieConsent", choice);   // ← Se almacena aquí
             } catch (error) {
-                // La elección no se podrá recordar si el navegador bloquea el almacenamiento.
+                // Si el navegador bloquea localStorage, no se puede recordar.
             }
 
-            cookieBanner.style.display = "none";
-            cookieOverlay.style.display = "none";
+            // Ocultamos el banner siempre.
+            document.getElementById("cookieBanner").style.display = "none";
+            document.getElementById("cookieOverlay").style.display = "none";
 
-            // Si el usuario acepta, cargamos las cookies de seguimiento ahora.
+            // Si el usuario ACEPTA, cargamos el seguimiento de cookies.
             if (choice === "accepted") {
                 cargarGTM();
             }
@@ -1179,9 +1171,9 @@
             window.location.href = "politica-cookies.html";
         });
 
-        // Comprueba la consolución previa y muestra el banner si es necesario.
+        // Al cargar la página: comprobar consentimiento previo y mostrar el banner.
         window.addEventListener("load", function () {
-            gestionarCookies();
+            comprobarConsentimientoPrevio();
             showCookieBanner();
         });
     </script>
