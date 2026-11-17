@@ -1,136 +1,361 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
-  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-5LVNCM2N"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-</script>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Política de cookies de Taxi Vilches.">
+
+  <meta name="description" content="Política de cookies de Taxi Vilches. Información sobre cookies, almacenamiento local, Google Tag Manager y Google Analytics.">
+  <meta name="robots" content="index, follow">
+
   <title>Política de cookies | Taxi Vilches</title>
+
   <link rel="canonical" href="https://taxivilches.es/politica-cookies.html">
+  <link rel="alternate" hreflang="es-ES" href="https://taxivilches.es/politica-cookies.html">
+
+  <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
   <style>
-    body{margin:0;background:#f7f7f7;color:#222;font:16px/1.65 Arial,sans-serif}
-    header{background:#111;border-bottom:4px solid #f5c518;padding:20px;color:white}
-    .wrap{max-width:900px;margin:auto}
-    header a{color:#f5c518;text-decoration:none;font-weight:bold}
-    nav{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px}
-    nav a{color:white;font-size:14px}
-    main{max-width:850px;margin:25px auto;background:white;padding:30px;border-radius:10px}
-    h1,h2{color:#111}h2{margin-top:28px;font-size:20px}
-    a{color:#765900}
-    footer{text-align:center;padding:20px;color:#666;font-size:14px}
-    @media(max-width:600px){main{margin:12px;padding:20px}}
+    :root {
+      --negro: #111111;
+      --amarillo: #f5c518;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f7f7f7;
+      color: #222;
+      font: 16px/1.65 Arial, Helvetica, sans-serif;
+    }
+
+    a {
+      color: #765900;
+    }
+
+    header {
+      background: var(--negro);
+      border-bottom: 4px solid var(--amarillo);
+      padding: 20px;
+      color: white;
+    }
+
+    .wrap {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    header a {
+      color: var(--amarillo);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    nav a {
+      color: white;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: var(--amarillo);
+    }
+
+    main {
+      max-width: 850px;
+      margin: 25px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    h1,
+    h2 {
+      color: var(--negro);
+    }
+
+    h2 {
+      margin-top: 28px;
+      font-size: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      font-size: 15px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f0f0f0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #765900;
+    }
+
+    .aviso {
+      background: #fff8e1;
+      border-left: 5px solid var(--amarillo);
+      padding: 15px;
+      border-radius: 6px;
+      margin: 20px 0;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        margin: 12px;
+        padding: 20px;
+      }
+
+      table {
+        font-size: 14px;
+      }
+
+      th,
+      td {
+        padding: 8px;
+      }
+    }
   </style>
 </head>
+
 <body>
-<header>
-  <div class="wrap">
-    <a href="/">TAXI VILCHES</a>
-    <nav>
-      <a href="/">Inicio</a>
-      <a href="/aviso-legal.html">Aviso legal</a>
-      <a href="/politica-privacidad.html">Privacidad</a>
-      <a href="/politica-cookies.html">Cookies</a>
-    </nav>
-  </div>
-</header>
+  <header>
+    <div class="wrap">
+      <a href="/">TAXI VILCHES</a>
 
-<main>
-  <h1>Política de cookies</h1>
+      <nav aria-label="Navegación legal">
+        <a href="/">Inicio</a>
+        <a href="/aviso-legal.html">Aviso legal</a>
+        <a href="/politica-privacidad.html">Privacidad</a>
+        <a href="/politica-cookies.html" aria-current="page">Cookies</a>
+      </nav>
+    </div>
+  </header>
 
-  <p>Esta política informa sobre el uso de cookies y tecnologías
-  similares en el sitio web
-  <a href="https://taxivilches.es/">taxivilches.es</a>.</p>
+  <main>
+    <h1>Política de cookies</h1>
 
-  <h2>1. ¿Qué son las cookies?</h2>
-  <p>Las cookies son pequeños archivos que una página web puede
-  guardar en el navegador del visitante. También existen tecnologías
-  similares, como el almacenamiento local del navegador, que pueden
-  guardar información en el dispositivo.</p>
+    <p>
+      Esta política de cookies explica qué cookies y tecnologías de almacenamiento
+      utiliza el sitio web
+      <a href="https://taxivilches.es/">taxivilches.es</a>,
+      con qué finalidad y cómo puedes gestionarlas.
+    </p>
 
-  <h2>2. Tecnologías utilizadas en esta web</h2>
-  <p>La web está concebida como una página informativa y no incorpora
-  deliberadamente herramientas de analítica publicitaria o elaboración
-  de perfiles, como Google Analytics o Meta Pixel.</p>
-  <p>El aviso de cookies puede utilizar el almacenamiento local
-  del navegador (<em>localStorage</em>) para recordar la elección
-  del visitante respecto al aviso y evitar que se muestre
-  repetidamente.</p>
-  <p>Este almacenamiento se utiliza para recordar esa preferencia,
-  no para identificar al visitante, seguir su navegación por otras
-  webs ni crear perfiles publicitarios.</p>
+    <p>
+      <strong>Responsable:</strong> Taxi Vilches.<br>
+      <strong>Sitio web:</strong>
+      <a href="https://taxivilches.es/">https://taxivilches.es/</a><br>
+      <strong>Contacto:</strong> 661 71 37 94.
+    </p>
 
-  <h2>3. Google Tag Manager y Google Analytics</h2>
+    <h2>1. ¿Qué son las cookies?</h2>
 
-<p>
-  Esta web utiliza <strong>Google Tag Manager</strong> para gestionar etiquetas
-  y <strong>Google Analytics 4</strong> para obtener estadísticas anónimas o
-  seudónimas sobre el uso del sitio web, como páginas visitadas, duración de la
-  visita, origen del tráfico, tipo de dispositivo, sistema operativo y
-  interacciones con la web.
-</p>
+    <p>
+      Las cookies son pequeños archivos que un sitio web puede almacenar en tu
+      navegador o dispositivo. También se utilizan tecnologías similares, como el
+      almacenamiento local del navegador (<em>localStorage</em>), que permiten
+      recordar información entre visitas.
+    </p>
 
-<p>
-  Google Analytics puede utilizar cookies u otros identificadores para reconocer
-  el navegador o dispositivo durante visitas posteriores y analizar el uso de la
-  web. Estos datos se utilizan para medir y mejorar el funcionamiento del sitio,
-  conocer qué contenidos son más útiles y detectar posibles incidencias técnicas.
-</p>
+    <p>
+      Algunas cookies son necesarias para el funcionamiento básico de la web.
+      Otras pueden utilizarse para estadísticas, personalización, publicidad o
+      servicios de terceros y, en esos casos, requieren tu consentimiento antes
+      de instalarse o activarse.
+    </p>
 
-<p>
-  La información puede incluir, entre otros, la dirección IP truncada o
-  seudonimizada según la configuración aplicada, identificadores de dispositivo
-  o navegador, páginas vistas, eventos realizados, fecha y hora de la visita,
-  idioma, región aproximada y datos técnicos del dispositivo.
-</p>
+    <h2>2. Tecnologías utilizadas</h2>
 
-<p>
-  Google actúa como proveedor del servicio de análisis. Puedes consultar cómo
-  Google utiliza la información de los sitios que emplean sus servicios en
-  <a href="https://policies.google.com/technologies/partner-sites?hl=es"
-     target="_blank"
-     rel="noopener noreferrer">
-     Cómo utiliza Google la información de sitios o aplicaciones que usan sus servicios
-  </a>.
-</p>
+    <p>
+      Esta web utiliza almacenamiento local del navegador para recordar tu decisión
+      sobre el uso de cookies. La información guardada es únicamente tu elección:
+      aceptada o rechazada.
+    </p>
 
-<div class="aviso">
-  <strong>Importante:</strong> Google Tag Manager y Google Analytics no se cargan
-  si has rechazado las cookies no necesarias. Solo se cargan después de pulsar
-  <strong>“Aceptar todas”</strong> en el aviso de cookies.
-</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Tecnología</th>
+          <th>Nombre</th>
+          <th>Finalidad</th>
+          <th>Tipo</th>
+          <th>Conservación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Almacenamiento local</td>
+          <td><code>taxivilches_cookie_consent</code></td>
+          <td>
+            Recordar si has aceptado o rechazado las cookies no necesarias,
+            para no mostrar de nuevo el aviso en cada visita.
+          </td>
+          <td>Técnica / preferencia</td>
+          <td>Hasta que la borres desde el navegador</td>
+        </tr>
+      </tbody>
+    </table>
 
-  <h2>4. Herramientas que podrían incorporarse en el futuro</h2>
-  <p>Si se incorporan mapas o vídeos incrustados, estadísticas,
-  publicidad, contenido de redes sociales u otros servicios de terceros,
-  esta política se actualizará para informar sobre los proveedores,
-  finalidades, tipos de tecnologías y plazos aplicables.</p>
-  <p>Cuando esas tecnologías requieran consentimiento, no se activarán
-  antes de obtenerlo válidamente.</p>
+    <p>
+      Este almacenamiento no se utiliza para identificarte personalmente, seguir tu
+      navegación en otras webs ni elaborar perfiles publicitarios.
+    </p>
 
-  <h2>5. Cómo gestionar las preferencias</h2>
-  <p>El usuario puede borrar cookies y almacenamiento local desde
-  la configuración de su navegador.</p>
-  <p>Si borra el almacenamiento local, el aviso de cookies puede
-  volver a mostrarse o dejar de recordarse la preferencia seleccionada.</p>
+    <h2>3. Google Tag Manager y Google Analytics</h2>
 
-  <h2>6. Actualizaciones</h2>
-  <p>Esta política se revisará cuando cambien las tecnologías utilizadas
-  en la web. La información publicada debe corresponder siempre con
-  el funcionamiento real del sitio.</p>
+    <p>
+      Esta web utiliza <strong>Google Tag Manager</strong> para gestionar etiquetas
+      y <strong>Google Analytics 4</strong> para obtener estadísticas seudónimas
+      sobre el uso del sitio web, como páginas visitadas, duración de la visita,
+      origen del tráfico, tipo de dispositivo, sistema operativo e interacciones
+      con la web.
+    </p>
 
-  <p><strong>Última actualización:</strong> 16 de noviembre de 2026.</p>
-</main>
+    <p>
+      Google Analytics puede utilizar cookies u otros identificadores para reconocer
+      el navegador o dispositivo durante visitas posteriores y analizar el uso de la
+      web. Estos datos se utilizan para medir y mejorar el funcionamiento del sitio,
+      conocer qué contenidos son más útiles y detectar posibles incidencias técnicas.
+    </p>
 
-<footer>
-  © Taxi Vilches · <a href="/">Volver al inicio</a>
-</footer>
+    <p>
+      La información puede incluir, entre otros, identificadores de dispositivo o
+      navegador, páginas vistas, eventos realizados, fecha y hora de la visita,
+      idioma, región aproximada y datos técnicos del dispositivo.
+    </p>
+
+    <p>
+      Google actúa como proveedor del servicio de análisis. Puedes consultar cómo
+      Google utiliza la información de los sitios que emplean sus servicios en
+      <a href="https://policies.google.com/technologies/partner-sites?hl=es"
+         target="_blank"
+         rel="noopener noreferrer">
+         Cómo utiliza Google la información de sitios o aplicaciones que usan sus servicios
+      </a>.
+    </p>
+
+    <div class="aviso">
+      <strong>Importante:</strong> Google Tag Manager y Google Analytics no se cargan
+      si has rechazado las cookies no necesarias. Solo se cargan después de pulsar
+      <strong>“Aceptar todas”</strong> en el aviso de cookies.
+    </div>
+
+    <h2>4. Consentimiento</h2>
+
+    <p>
+      Al acceder por primera vez a esta web, se muestra un aviso de cookies con las
+      siguientes opciones:
+    </p>
+
+    <ul>
+      <li><strong>Aceptar todas:</strong> permite cargar Google Tag Manager y Google Analytics, así como las cookies necesarias para su funcionamiento.</li>
+      <li><strong>Rechazar:</strong> impide la carga de Google Tag Manager, Google Analytics y las cookies analíticas no necesarias.</li>
+      <li><strong>Más información:</strong> abre esta política de cookies.</li>
+    </ul>
+
+    <p>
+      Tu decisión se guarda en el almacenamiento local de tu navegador para que no
+      tengas que volver a elegir en cada visita.
+    </p>
+
+    <p>
+      Si has aceptado las cookies y deseas retirar tu consentimiento, borra las
+      cookies y el almacenamiento local desde la configuración de tu navegador.
+      Al volver a acceder a esta web, se mostrará de nuevo el aviso de cookies.
+    </p>
+
+    <h2>5. Cookies de terceros</h2>
+
+    <p>
+      Esta web contiene enlaces a servicios de terceros, como WhatsApp, Facebook,
+      X y Google Maps. Estos enlaces no instalan cookies de terceros por sí solos
+      mientras permaneces en esta web.
+    </p>
+
+    <p>
+      Sin embargo, al hacer clic y acceder a esos servicios, sus proveedores pueden
+      utilizar cookies, identificadores u otras tecnologías propias. El tratamiento
+      de datos realizado por esos proveedores se rige por sus respectivas políticas
+      de privacidad y cookies.
+    </p>
+
+    <h2>6. Herramientas que podrían incorporarse en el futuro</h2>
+
+    <p>
+      Si se incorporan mapas o vídeos incrustados, estadísticas adicionales,
+      publicidad, contenido de redes sociales u otros servicios de terceros, esta
+      política se actualizará para informar sobre los proveedores, finalidades,
+      tipos de tecnologías y plazos de conservación aplicables.
+    </p>
+
+    <p>
+      Cuando esas tecnologías requieran consentimiento, no se activarán antes de
+      obtenerlo válidamente.
+    </p>
+
+    <h2>7. Cómo gestionar las preferencias</h2>
+
+    <p>
+      Puedes configurar tu navegador para bloquear o eliminar cookies. Ten en cuenta
+      que bloquear todas las cookies puede afectar al funcionamiento de algunas webs.
+    </p>
+
+    <ul>
+      <li><a href="https://support.google.com/chrome/answer/95647?hl=es" target="_blank" rel="noopener noreferrer">Google Chrome</a></li>
+      <li><a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias" target="_blank" rel="noopener noreferrer">Mozilla Firefox</a></li>
+      <li><a href="https://support.microsoft.com/es-es/microsoft-edge" target="_blank" rel="noopener noreferrer">Microsoft Edge</a></li>
+      <li><a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer">Safari</a></li>
+    </ul>
+
+    <p>
+      También puedes eliminar la preferencia guardada desde las herramientas de
+      desarrollador del navegador, en
+      <strong>Application &gt; Local Storage &gt; https://taxivilches.es</strong>,
+      eliminando la clave <code>taxivilches_cookie_consent</code>.
+    </p>
+
+    <h2>8. Actualizaciones</h2>
+
+    <p>
+      Esta política puede actualizarse cuando cambien las tecnologías utilizadas,
+      se incorporen nuevos servicios de terceros o se modifique la normativa
+      aplicable. La información publicada debe corresponder siempre con el
+      funcionamiento real del sitio.
+    </p>
+
+    <p><strong>Última actualización:</strong> 17 de noviembre de 2026.</p>
+  </main>
+
+  <footer>
+    © Taxi Vilches · <a href="/">Volver al inicio</a>
+  </footer>
 </body>
 </html>
