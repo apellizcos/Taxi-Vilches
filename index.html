@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta name="google-site-verification" content="497UnLrjDyV7N8-zmeOVG3EaR68Nj-2IZ0Yrq2C-EmE" />
+       <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-5LVNCM2N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
 
+
+    <meta name="google-site-verification" content="497UnLrjDyV7N8-zmeOVG3EaR68Nj-2IZ0Yrq2C-EmE" />
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -860,7 +868,7 @@
         <div class="compartir-contenido">
             <div class="compartir-etiqueta">TAXI VILCHES</div>
 
-            <h2>¿nos ayudas a compartir?</h2>
+            <h2>¿Nos ayudas a compartir?</h2>
 
             <p>
                 Recomienda Taxi Vilches a tus familiares y amigos.
@@ -886,7 +894,7 @@
                    href="https://twitter.com/intent/tweet?text=Te%20recomiendo%20Taxi%20Vilches&url=https%3A%2F%2Ftaxivilches.es%2F"
                    target="_blank"
                    rel="noopener noreferrer">
-                    𝕘 Compartir
+                    𝕏 Compartir
                 </a>
 
                 <button class="boton-compartir"
@@ -1005,7 +1013,19 @@
             <a href="aviso-legal.html">Aviso legal</a>
             <a href="politica-privacidad.html">Política de privacidad</a>
         </div>
-    </footer>
+    <footer>
+        <p>
+            © <span id="year"></span>
+            <strong>Taxi Vilches</strong>.
+            Todos los derechos reservados.
+        </p>
+
+        <div class="enlaces-legales">
+            <a href="politica-cookies.html">Política de cookies</a>
+            <a href="aviso-legal.html">Aviso legal</a>
+            <a href="politica-privacidad.html">Política de privacidad</a>
+        </div>
+        </footer>
 
     <a class="whatsapp-flotante"
        href="https://wa.me/34661713794"
@@ -1027,9 +1047,11 @@
         <h3 id="cookieTitle">🍪 Esta página utiliza cookies</h3>
 
         <p id="cookieDescription">
-            Esta página utiliza cookies de análisis (Google Analytics / Tag Manager)
-            para medir y mejorar el rendimiento del sitio. Solamente se instalarán
-            si aceptas su uso. Si las rechazas, no se recopila ninguna información.
+            Las cookies son pequeños fragmentos de texto que se envían
+            a su navegador web a través de las páginas que visita.
+            Un archivo de la cookie se almacena en su navegador web
+            y nos permite reconocerle y recordar sus preferencias.
+            Al pulsar en "Aceptar" acepta el uso de nuestras cookies.
             <a href="politica-cookies.html">Leer más</a>
         </p>
 
@@ -1049,65 +1071,9 @@
     </div>
 
     <script>
-        // ============================================================
-        //  GESTIÓN DE COOKIES Y TAG MANAGER
-        // ============================================================
-
-        // Capa de datos de Google (se rellena cuando el usuario acepte).
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){ dataLayer.push(arguments); }
-
-        // Carga Google Tag Manager (con él Google Analytics) y envía el
-        // consentimiento. SE EJECUTA SOLO si el usuario acepta las cookies.
-        function cargarGTM() {
-            // Consentimiento: deniega el almacenamiento de datos hasta el "sí".
-            gtag("consent", "default", {
-                ad_storage: "denied",
-                analytics_storage: "denied",
-                personalization_storage: "denied",
-                functionality_storage: "denied",
-                security_storage: "granted"
-            });
-
-            var script = document.createElement("script");
-            script.async = true;
-            script.src = "https://www.googletagmanager.com/gtm.js?id=GTM-5LVNCM2N";
-            document.head.appendChild(script);
-
-            gtag("js", new Date());
-            gtag("config", "GTM-5LVNCM2N");
-        }
-
-        // Lee la elección guardada en localStorage.
-        function getCookieConsent() {
-            try {
-                return localStorage.getItem("cookieConsent");
-            } catch (e) {
-                return null;
-            }
-        }
-
-        // Si el usuario ya aceptó en una visita previa, cargamos el Tag Manager.
-        function comprobarConsentimientoPrevio() {
-            if (getCookieConsent() === "accepted") {
-                cargarGTM();
-            }
-        }
-
-        // Muestra el banner solo si el usuario aún no ha decidido.
-        function showCookieBanner() {
-            if (!getCookieConsent()) {
-                document.getElementById("cookieBanner").style.display = "block";
-                document.getElementById("cookieOverlay").style.display = "block";
-            }
-        }
-
-        // ============================================================
-        //  RESTO DE FUNCIONALIDADES DE LA PÁGINA
-        // ============================================================
-
         // Año del pie de página
-        document.getElementById("year").textContent = new Date().getFullYear();
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
 
         // Copiar enlace de Taxi Vilches
         document.getElementById("copiarEnlace").addEventListener("click", async function () {
@@ -1141,22 +1107,32 @@
             }
         });
 
-        // Guardar la elección del usuario en el navegador.
+        // Aviso de cookies: guarda la elección en el navegador.
+        const cookieBanner = document.getElementById("cookieBanner");
+        const cookieOverlay = document.getElementById("cookieOverlay");
+
+        function showCookieBanner() {
+            try {
+                if (!localStorage.getItem("cookieConsent")) {
+                    cookieBanner.style.display = "block";
+                    cookieOverlay.style.display = "block";
+                }
+            } catch (error) {
+                // Si el navegador bloquea localStorage, se muestra el aviso.
+                cookieBanner.style.display = "block";
+                cookieOverlay.style.display = "block";
+            }
+        }
+
         function saveCookieChoice(choice) {
             try {
-                localStorage.setItem("cookieConsent", choice);   // ← Se almacena aquí
+                localStorage.setItem("cookieConsent", choice);
             } catch (error) {
-                // Si el navegador bloquea localStorage, no se puede recordar.
+                // La elección no se podrá recordar si el navegador bloquea el almacenamiento.
             }
 
-            // Ocultamos el banner siempre.
-            document.getElementById("cookieBanner").style.display = "none";
-            document.getElementById("cookieOverlay").style.display = "none";
-
-            // Si el usuario ACEPTA, cargamos el seguimiento de cookies.
-            if (choice === "accepted") {
-                cargarGTM();
-            }
+            cookieBanner.style.display = "none";
+            cookieOverlay.style.display = "none";
         }
 
         document.getElementById("acceptCookies").addEventListener("click", function () {
@@ -1171,11 +1147,7 @@
             window.location.href = "politica-cookies.html";
         });
 
-        // Al cargar la página: comprobar consentimiento previo y mostrar el banner.
-        window.addEventListener("load", function () {
-            comprobarConsentimientoPrevio();
-            showCookieBanner();
-        });
+        window.addEventListener("load", showCookieBanner);
     </script>
 </body>
 </html>
