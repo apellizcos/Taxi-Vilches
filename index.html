@@ -152,16 +152,35 @@
 
         .hero {
             min-height: 620px;
-            background:
-                linear-gradient(90deg, rgba(0,0,0,.88), rgba(0,0,0,.35)),
-                url("https://taxivilches.es/2.png") center/cover;
+            position: relative;
+            overflow: hidden;
             display: flex;
             align-items: center;
             padding: 80px 9%;
             color: white;
         }
 
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(0,0,0,.88), rgba(0,0,0,.35));
+            z-index: 1;
+        }
+
+        .hero-fondo {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: 0;
+        }
+
         .hero-content {
+            position: relative;
+            z-index: 2;
             max-width: 650px;
         }
 
@@ -269,9 +288,15 @@
         .sobre-imagen {
             min-height: 350px;
             border-radius: 12px;
-            background:
-                linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.1)),
-                url("https://taxivilches.es/1.png") center/cover;
+            overflow: hidden;
+        }
+
+        .sobre-imagen img {
+            display: block;
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            object-position: center;
         }
 
         .servicios {
@@ -397,7 +422,15 @@
         .vehiculo-imagen {
             min-height: 300px;
             border-radius: 12px;
-            background: url("https://taxivilches.es/3.png") center/cover;
+            overflow: hidden;
+        }
+
+        .vehiculo-imagen img {
+            display: block;
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            object-position: center;
         }
 
         .vehiculo-texto h3 {
@@ -686,6 +719,10 @@
 
     <!-- INICIO -->
     <section class="hero" id="inicio">
+        <img class="hero-fondo"
+             src="https://taxivilches.es/2.png"
+             alt="Imagen de portada de Taxi Vilches, servicio de taxi en Vilches, Jaén"
+             fetchpriority="high">
         <div class="hero-content">
             <div class="etiqueta">🚕 SERVICIO DE TAXI 24 HORAS</div>
 
@@ -744,9 +781,11 @@
                 </a>
             </div>
 
-            <div class="sobre-imagen"
-                 role="img"
-                 aria-label="Imagen ilustrativa de Taxi Vilches"></div>
+            <div class="sobre-imagen">
+                <img src="https://taxivilches.es/1.png"
+                     alt="Imagen ilustrativa de Taxi Vilches en Vilches, Jaén"
+                     loading="lazy">
+            </div>
         </div>
     </section>
 
@@ -870,9 +909,11 @@
         </div>
 
         <div class="vehiculo-contenido">
-            <div class="vehiculo-imagen"
-                 role="img"
-                 aria-label="Imagen ilustrativa del vehículo de Taxi Vilches"></div>
+            <div class="vehiculo-imagen">
+                <img src="https://taxivilches.es/3.png"
+                     alt="Toyota Corolla Sedan 140H híbrido con etiqueta ECO utilizado por Taxi Vilches"
+                     loading="lazy">
+            </div>
 
             <div class="vehiculo-texto">
                 <h3>Toyota Corolla Sedan 140H</h3>
