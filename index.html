@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-       <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-5LVNCM2N"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-</script>
-
-
-    <meta name="google-site-verification" content="497UnLrjDyV7N8-zmeOVG3EaR68Nj-2IZ0Yrq2C-EmE" />
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -23,16 +13,14 @@
     <link rel="canonical" href="https://taxivilches.es/">
     <link rel="alternate" hreflang="es-ES" href="https://taxivilches.es/">
 
-    <!-- Iconos: estos archivos deben estar en la raíz del repositorio -->
     <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-    <!-- Verificación de buscadores y Apple -->
     <meta name="msvalidate.01" content="1AD4091CF00F4D98E9ED1A7CE4168725">
     <meta name="apple-domain-verification" content="FAwy00cfiAPEXM5F">
+    <meta name="google-site-verification" content="497UnLrjDyV7N8-zmeOVG3EaR68Nj-2IZ0Yrq2C-EmE" />
 
-    <!-- Open Graph: imagen en el propio dominio -->
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_ES">
     <meta property="og:site_name" content="Taxi Vilches">
@@ -41,13 +29,11 @@
     <meta property="og:url" content="https://taxivilches.es/">
     <meta property="og:image" content="https://taxivilches.es/2.png">
 
-    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Taxi Vilches - Taxi 24 horas">
     <meta name="twitter:description" content="Taxi en Vilches, Jaén. Traslados locales y viajes de larga distancia.">
     <meta name="twitter:image" content="https://taxivilches.es/2.png">
 
-    <!-- Datos estructurados para buscadores -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -348,7 +334,6 @@
             color: #777;
         }
 
-        /* COMPARTIR TAXI VILCHES */
         .compartir {
             background: #111111;
             color: white;
@@ -565,7 +550,6 @@
             z-index: 200;
         }
 
-        /* AVISO DE COOKIES */
         .cookie-overlay {
             position: fixed;
             inset: 0;
@@ -636,6 +620,28 @@
             color: #222;
         }
 
+        .cookie-aviso-rechazo {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 650px;
+            width: calc(100% - 30px);
+            background: #fff;
+            color: #111;
+            padding: 18px 22px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,.3);
+            z-index: 9999;
+            display: none;
+            font-size: 14px;
+        }
+
+        .cookie-aviso-rechazo a {
+            color: #a17c00;
+            font-weight: bold;
+        }
+
         @media (max-width: 800px) {
             header {
                 flex-direction: column;
@@ -687,7 +693,8 @@
         }
 
         @media (max-width: 500px) {
-            .cookie-banner {
+            .cookie-banner,
+            .cookie-aviso-rechazo {
                 padding: 20px;
                 bottom: 10px;
             }
@@ -727,12 +734,12 @@
         </nav>
     </header>
 
-    <!-- INICIO -->
     <section class="hero" id="inicio">
         <img class="hero-fondo"
              src="https://taxivilches.es/2.png"
              alt="Imagen de portada de Taxi Vilches, servicio de taxi en Vilches, Jaén"
              fetchpriority="high">
+
         <div class="hero-content">
             <div class="etiqueta">🚕 SERVICIO DE TAXI 24 HORAS</div>
 
@@ -744,7 +751,7 @@
             <p>
                 Taxi Vilches. Transporte cómodo, seguro y profesional.
                 Tu taxi de confianza en Vilches y alrededores.
-                (Imágenes generadas con IA)
+                Imágenes generadas con IA.
             </p>
 
             <div class="botones">
@@ -762,7 +769,6 @@
         </div>
     </section>
 
-    <!-- SOBRE MÍ -->
     <section class="sobre" id="nosotros">
         <div class="sobre-contenido">
             <div class="sobre-texto">
@@ -799,7 +805,6 @@
         </div>
     </section>
 
-    <!-- SERVICIOS -->
     <section class="servicios" id="servicios">
         <div class="titulo">
             <h2>Mis servicios</h2>
@@ -863,7 +868,6 @@
         </div>
     </section>
 
-    <!-- COMPARTIR TAXI VILCHES -->
     <section class="compartir" id="compartir">
         <div class="compartir-contenido">
             <div class="compartir-etiqueta">TAXI VILCHES</div>
@@ -911,7 +915,6 @@
         </div>
     </section>
 
-    <!-- VEHÍCULO -->
     <section class="vehiculo" id="vehiculo">
         <div class="titulo">
             <h2>Mi herramienta de trabajo</h2>
@@ -949,7 +952,6 @@
         </div>
     </section>
 
-    <!-- LLAMADA A LA ACCIÓN -->
     <section class="cta">
         <h2>¿Necesitas un taxi?</h2>
         <p>
@@ -962,7 +964,6 @@
         </a>
     </section>
 
-    <!-- CONTACTO -->
     <section class="contacto" id="contacto">
         <div class="titulo">
             <h2>Contacta conmigo</h2>
@@ -1013,19 +1014,7 @@
             <a href="aviso-legal.html">Aviso legal</a>
             <a href="politica-privacidad.html">Política de privacidad</a>
         </div>
-    <footer>
-        <p>
-            © <span id="year"></span>
-            <strong>Taxi Vilches</strong>.
-            Todos los derechos reservados.
-        </p>
-
-        <div class="enlaces-legales">
-            <a href="politica-cookies.html">Política de cookies</a>
-            <a href="aviso-legal.html">Aviso legal</a>
-            <a href="politica-privacidad.html">Política de privacidad</a>
-        </div>
-        </footer>
+    </footer>
 
     <a class="whatsapp-flotante"
        href="https://wa.me/34661713794"
@@ -1035,7 +1024,6 @@
         ☎
     </a>
 
-    <!-- AVISO DE COOKIES -->
     <div class="cookie-overlay" id="cookieOverlay"></div>
 
     <div class="cookie-banner"
@@ -1047,17 +1035,16 @@
         <h3 id="cookieTitle">🍪 Esta página utiliza cookies</h3>
 
         <p id="cookieDescription">
-            Las cookies son pequeños fragmentos de texto que se envían
-            a su navegador web a través de las páginas que visita.
-            Un archivo de la cookie se almacena en su navegador web
-            y nos permite reconocerle y recordar sus preferencias.
-            Al pulsar en "Aceptar" acepta el uso de nuestras cookies.
-            <a href="politica-cookies.html">Leer más</a>
+            Utilizamos cookies propias y de terceros para mejorar tu experiencia,
+            analizar el uso de la web y mostrar contenidos personalizados.
+            Puedes aceptar todas las cookies, rechazar las no necesarias o consultar
+            más información en la
+            <a href="politica-cookies.html">política de cookies</a>.
         </p>
 
         <div class="cookie-buttons">
             <button class="cookie-accept" type="button" id="acceptCookies">
-                Aceptar
+                Aceptar todas
             </button>
 
             <button class="cookie-reject" type="button" id="rejectCookies">
@@ -1070,12 +1057,99 @@
         </div>
     </div>
 
-    <script>
-        // Año del pie de página
-        document.getElementById("year").textContent =
-            new Date().getFullYear();
+    <div class="cookie-aviso-rechazo"
+         id="cookieRechazo"
+         role="status"
+         aria-live="polite">
+        Has rechazado las cookies no necesarias. Google Tag Manager y las cookies
+        analíticas no se cargarán. Puedes cambiar tu decisión desde
+        <a href="politica-cookies.html">Política de cookies</a>.
+    </div>
 
-        // Copiar enlace de Taxi Vilches
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        const COOKIE_KEY = "taxivilches_cookie_consent";
+        const GTM_ID = "GTM-5LVNCM2N";
+
+        const cookieBanner = document.getElementById("cookieBanner");
+        const cookieOverlay = document.getElementById("cookieOverlay");
+        const cookieRechazo = document.getElementById("cookieRechazo");
+
+        function getConsent() {
+            try {
+                return localStorage.getItem(COOKIE_KEY);
+            } catch (error) {
+                return null;
+            }
+        }
+
+        function saveConsent(value) {
+            try {
+                localStorage.setItem(COOKIE_KEY, value);
+            } catch (error) {
+                console.warn("No se pudo guardar la preferencia de cookies.");
+            }
+        }
+
+        function hideCookieElements() {
+            cookieBanner.style.display = "none";
+            cookieOverlay.style.display = "none";
+        }
+
+        function loadGoogleTagManager() {
+            if (document.getElementById("gtm-script")) return;
+
+            const script = document.createElement("script");
+            script.id = "gtm-script";
+            script.async = true;
+            script.src = "https://www.googletagmanager.com/gtm.js?id=" + GTM_ID;
+            document.head.appendChild(script);
+
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: "cookie_consent_granted",
+                consent: "accepted"
+            });
+        }
+
+        function acceptCookies() {
+            saveConsent("accepted");
+            hideCookieElements();
+            cookieRechazo.style.display = "none";
+            loadGoogleTagManager();
+        }
+
+        function rejectCookies() {
+            saveConsent("rejected");
+            hideCookieElements();
+            cookieRechazo.style.display = "block";
+        }
+
+        function initCookieConsent() {
+            const consent = getConsent();
+
+            if (consent === "accepted") {
+                loadGoogleTagManager();
+                return;
+            }
+
+            if (consent === "rejected") {
+                cookieRechazo.style.display = "block";
+                return;
+            }
+
+            cookieBanner.style.display = "block";
+            cookieOverlay.style.display = "block";
+        }
+
+        document.getElementById("acceptCookies").addEventListener("click", acceptCookies);
+        document.getElementById("rejectCookies").addEventListener("click", rejectCookies);
+
+        document.getElementById("openCookiePolicy").addEventListener("click", function () {
+            window.location.href = "politica-cookies.html";
+        });
+
         document.getElementById("copiarEnlace").addEventListener("click", async function () {
             const enlace = "https://taxivilches.es/";
             const mensaje = document.getElementById("mensajeCompartir");
@@ -1102,52 +1176,11 @@
 
                 mensaje.textContent = "¡Enlace copiado! Ya puedes compartirlo.";
             } catch (error) {
-                mensaje.textContent =
-                    "No se ha podido copiar. Copia manualmente: " + enlace;
+                mensaje.textContent = "No se ha podido copiar. Copia manualmente: " + enlace;
             }
         });
 
-        // Aviso de cookies: guarda la elección en el navegador.
-        const cookieBanner = document.getElementById("cookieBanner");
-        const cookieOverlay = document.getElementById("cookieOverlay");
-
-        function showCookieBanner() {
-            try {
-                if (!localStorage.getItem("cookieConsent")) {
-                    cookieBanner.style.display = "block";
-                    cookieOverlay.style.display = "block";
-                }
-            } catch (error) {
-                // Si el navegador bloquea localStorage, se muestra el aviso.
-                cookieBanner.style.display = "block";
-                cookieOverlay.style.display = "block";
-            }
-        }
-
-        function saveCookieChoice(choice) {
-            try {
-                localStorage.setItem("cookieConsent", choice);
-            } catch (error) {
-                // La elección no se podrá recordar si el navegador bloquea el almacenamiento.
-            }
-
-            cookieBanner.style.display = "none";
-            cookieOverlay.style.display = "none";
-        }
-
-        document.getElementById("acceptCookies").addEventListener("click", function () {
-            saveCookieChoice("accepted");
-        });
-
-        document.getElementById("rejectCookies").addEventListener("click", function () {
-            saveCookieChoice("rejected");
-        });
-
-        document.getElementById("openCookiePolicy").addEventListener("click", function () {
-            window.location.href = "politica-cookies.html";
-        });
-
-        window.addEventListener("load", showCookieBanner);
+        initCookieConsent();
     </script>
 </body>
 </html>
