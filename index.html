@@ -1044,7 +1044,7 @@
             <a href="aviso-legal.html">Aviso legal</a>
             <a href="politica-privacidad.html">Política de privacidad</a>
         </div>
-    </footer>
+        </footer>
 
     <a class="whatsapp-flotante"
        href="https://wa.me/34661713794"
@@ -1126,35 +1126,13 @@
             }
         });
 
-        // Configuración y carga condicional de Google Analytics 4
-        const GA_MEASUREMENT_ID = "G-TU_CODIGO_AQUI";
-
-        function loadGoogleAnalytics() {
-            if (window.gaLoaded) return;
-            window.gaLoaded = true;
-
-            const script = document.createElement("script");
-            script.async = true;
-            script.src = "https://googletagmanager.com" + GA_MEASUREMENT_ID;
-            document.head.appendChild(script);
-
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            window.gtag = gtag;
-            gtag("js", new Date());
-            gtag("config", GA_MEASUREMENT_ID, { anonymize_ip: true });
-        }
-
         // Aviso de cookies: guarda la elección en el navegador.
         const cookieBanner = document.getElementById("cookieBanner");
         const cookieOverlay = document.getElementById("cookieOverlay");
 
-        function initCookieConsent() {
+        function showCookieBanner() {
             try {
-                const consent = localStorage.getItem("cookieConsent");
-                if (consent === "accepted") {
-                    loadGoogleAnalytics();
-                } else if (!consent) {
+                if (!localStorage.getItem("cookieConsent")) {
                     cookieBanner.style.display = "block";
                     cookieOverlay.style.display = "block";
                 }
@@ -1170,10 +1148,6 @@
                 localStorage.setItem("cookieConsent", choice);
             } catch (error) {
                 // La elección no se podrá recordar si el navegador bloquea el almacenamiento.
-            }
-
-            if (choice === "accepted") {
-                loadGoogleAnalytics();
             }
 
             cookieBanner.style.display = "none";
@@ -1192,7 +1166,7 @@
             window.location.href = "politica-cookies.html";
         });
 
-        window.addEventListener("load", initCookieConsent);
+        window.addEventListener("load", showCookieBanner);
     </script>
 </body>
 </html>
