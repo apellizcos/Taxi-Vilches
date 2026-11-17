@@ -1,16 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-       <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-5LVNCM2N"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-</script>
-
-
     <meta name="google-site-verification" content="497UnLrjDyV7N8-zmeOVG3EaR68Nj-2IZ0Yrq2C-EmE" />
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -868,7 +860,7 @@
         <div class="compartir-contenido">
             <div class="compartir-etiqueta">TAXI VILCHES</div>
 
-            <h2>¿Nos ayudas a compartir?</h2>
+            <h2>¿nos ayudas a compartir?</h2>
 
             <p>
                 Recomienda Taxi Vilches a tus familiares y amigos.
@@ -894,7 +886,7 @@
                    href="https://twitter.com/intent/tweet?text=Te%20recomiendo%20Taxi%20Vilches&url=https%3A%2F%2Ftaxivilches.es%2F"
                    target="_blank"
                    rel="noopener noreferrer">
-                    𝕏 Compartir
+                    𝕘 Compartir
                 </a>
 
                 <button class="boton-compartir"
@@ -939,7 +931,7 @@
                     una experiencia agradable durante el viaje.
                 </p>
 
-                <div class="ventajas">
+                <div class "ventajas">
                     <span>✓ Motor híbrido</span>
                     <span>✓ Etiqueta ECO</span>
                     <span>✓ Confort</span>
@@ -1013,19 +1005,7 @@
             <a href="aviso-legal.html">Aviso legal</a>
             <a href="politica-privacidad.html">Política de privacidad</a>
         </div>
-    <footer>
-        <p>
-            © <span id="year"></span>
-            <strong>Taxi Vilches</strong>.
-            Todos los derechos reservados.
-        </p>
-
-        <div class="enlaces-legales">
-            <a href="politica-cookies.html">Política de cookies</a>
-            <a href="aviso-legal.html">Aviso legal</a>
-            <a href="politica-privacidad.html">Política de privacidad</a>
-        </div>
-        </footer>
+    </footer>
 
     <a class="whatsapp-flotante"
        href="https://wa.me/34661713794"
@@ -1047,11 +1027,9 @@
         <h3 id="cookieTitle">🍪 Esta página utiliza cookies</h3>
 
         <p id="cookieDescription">
-            Las cookies son pequeños fragmentos de texto que se envían
-            a su navegador web a través de las páginas que visita.
-            Un archivo de la cookie se almacena en su navegador web
-            y nos permite reconocerle y recordar sus preferencias.
-            Al pulsar en "Aceptar" acepta el uso de nuestras cookies.
+            Esta página utiliza cookies de análisis (Google Analytics / Tag Manager)
+            para medir y mejorar el rendimiento del sitio. Solamente se instalarán
+            si aceptas su uso. Si las rechazas, no se recopila ninguna información.
             <a href="politica-cookies.html">Leer más</a>
         </p>
 
@@ -1069,6 +1047,68 @@
             </button>
         </div>
     </div>
+
+    <!-- Google Tag Manager: SOLO se carga si el usuario acepta las cookies -->
+    <script>
+        // Define la capa de datos. Se rellena con la consolución cuando el usuario acepte.
+        window.dataLayer = window.dataLayer || [];
+
+        // Función gtag(). No se invoca hasta que se cargue el script real.
+        function gtag(){ dataLayer.push(arguments); }
+
+        // Carga Google Tag Manager (y con él Google Analytics)
+        // Únicamente cuando el usuario haya aceptado las cookies.
+        function cargarGTM() {
+            var gtmScript = document.createElement("script");
+            gtmScript.async = true;
+            gtmScript.src = "https://www.googletagmanager.com/gtm.js?id=GTM-5LVNCM2N";
+            document.head.appendChild(gtmScript);
+
+            // Envía el evento de consentimiento a Google Analytics
+            gtag("consent", "default", {
+                ad_storage: "denied",
+                analytics_storage: "denied",
+                personalization_storage: "denied",
+                functionality_storage: "denied",
+                security_storage: "granted"
+            });
+            gtag("set", "url_creator", function () {});
+
+            gtag("js", new Date());
+            gtag("config", "GTM-5LVNCM2N");
+        }
+
+        // Carga el aviso de cookies y decide si se activan los seguidores
+        function gestionarCookies() {
+            var consent = null;
+            try {
+                consent = localStorage.getItem("cookieConsent");
+            } catch (e) {
+                consent = null;
+            }
+
+            if (consent === "accepted") {
+                // Usuario aceptó: se cargan las cookies de seguimiento
+                cargarGTM();
+            }
+            // Si rechazó o no ha decidido, NO se cargan las cookies.
+        }
+
+        // Muestra el banner si el usuario aún no ha decidido
+        function showCookieBanner() {
+            var consent = null;
+            try {
+                consent = localStorage.getItem("cookieConsent");
+            } catch (e) {
+                consent = null;
+            }
+
+            if (!consent) {
+                document.getElementById("cookieBanner").style.display = "block";
+                document.getElementById("cookieOverlay").style.display = "block";
+            }
+        }
+    </script>
 
     <script>
         // Año del pie de página
@@ -1111,19 +1151,6 @@
         const cookieBanner = document.getElementById("cookieBanner");
         const cookieOverlay = document.getElementById("cookieOverlay");
 
-        function showCookieBanner() {
-            try {
-                if (!localStorage.getItem("cookieConsent")) {
-                    cookieBanner.style.display = "block";
-                    cookieOverlay.style.display = "block";
-                }
-            } catch (error) {
-                // Si el navegador bloquea localStorage, se muestra el aviso.
-                cookieBanner.style.display = "block";
-                cookieOverlay.style.display = "block";
-            }
-        }
-
         function saveCookieChoice(choice) {
             try {
                 localStorage.setItem("cookieConsent", choice);
@@ -1133,6 +1160,11 @@
 
             cookieBanner.style.display = "none";
             cookieOverlay.style.display = "none";
+
+            // Si el usuario acepta, cargamos las cookies de seguimiento ahora.
+            if (choice === "accepted") {
+                cargarGTM();
+            }
         }
 
         document.getElementById("acceptCookies").addEventListener("click", function () {
@@ -1147,7 +1179,11 @@
             window.location.href = "politica-cookies.html";
         });
 
-        window.addEventListener("load", showCookieBanner);
+        // Comprueba la consolución previa y muestra el banner si es necesario.
+        window.addEventListener("load", function () {
+            gestionarCookies();
+            showCookieBanner();
+        });
     </script>
 </body>
 </html>
