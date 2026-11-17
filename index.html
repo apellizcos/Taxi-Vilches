@@ -1155,5 +1155,20 @@
 
         window.addEventListener("load", showCookieBanner);
     </script>
+
+<script>
+  function aceptarCookies() {
+    localStorage.setItem('cookies_aceptadas', 'true');
+    document.getElementById('banner-cookies').style.display = 'none';
+    cargarGoogleAnalytics();
+  }
+
+  function rechazarCookies() {
+    localStorage.setItem('cookies_aceptadas', 'false');
+    document.getElementById('banner-cookies').style.display = 'none';
+  }
+</script>
+
+    
 </body>
 </html>
