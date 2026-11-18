@@ -1192,5 +1192,21 @@
 
         initCookieConsent();
     </script>
+
+  <script>
+    // Ocultar automáticamente el aviso después de 8 segundos
+    setTimeout(function () {
+        const aviso = document.getElementById("avisoCookiesRechazadas");
+
+        if (aviso) {
+            aviso.style.transition = "opacity 0.5s ease";
+            aviso.style.opacity = "0";
+
+            setTimeout(function () {
+                aviso.style.display = "none";
+            }, 500);
+        }
+    }, 8000);
+</script>
 </body>
 </html>
